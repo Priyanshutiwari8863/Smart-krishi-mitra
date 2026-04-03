@@ -5,6 +5,6 @@ requests==2.31.0
 Pillow==10.2.0
 numpy==1.26.4
 pandas==2.2.1
-scikit-learn==1.4.1
+scikit-learn==1.4.2
 opencv-python-headless==4.9.0.80
 beautifulsoup4==4.12.3
