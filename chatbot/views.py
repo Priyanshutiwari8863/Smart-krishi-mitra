@@ -1,9 +1,12 @@
 from django.shortcuts import render, redirect
 import requests
 import uuid
-from .voice import listen_voice, speak
+try:
+    from .voice import listen_voice, speak
+except:
+    listen_voice = None
+    speak = None
 
-##    api_key = "c4c2829891234580814235307262903"
 def chatbot(request):
 
     chats = request.session.get('chats', {})
