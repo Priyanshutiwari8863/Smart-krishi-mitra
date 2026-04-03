@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+{% block content %}
+
+<h2 class="mb-4">🌾 {% trans "Smart Krishi Dashboard" %}</h2>
+
+<div class="row g-4">
+
+<!-- Crops -->
+<div class="col-md-4">
+<div class="card p-4 shadow">
+<h4>🌱 {% trans "Crops" %}</h4>
+<p>{% trans "View recommended crops" %}</p>
+<a href="/crops/" class="btn btn-success">{% trans "View Crops" %}</a>
+</div>
+</div>
+
+<!-- AI Recommendation -->
+<div class="col-md-4">
+<div class="card p-4 shadow">
+<h4>🤖 {% trans "AI Recommendation" %}</h4>
+<p>{% trans "Get AI crop suggestion" %}</p>
+<a href="/ai/recommend/" class="btn btn-success">{% trans "Try AI" %}</a>
+</div>
+</div>
+
+<!-- Chatbot -->
+<div class="col-md-4">
+<div class="card p-4 shadow">
+<h4>💬 {% trans "Chatbot" %}</h4>
+<p>{% trans "Ask farming questions" %}</p>
+<a href="/chatbot/" class="btn btn-success">{% trans "Chat Now" %}</a>
+</div>
+</div>
+
+<!-- Weather -->
+<div class="col-md-4">
+<div class="card p-4 shadow">
+<h4>🌦️ {% trans "Weather" %}</h4>
+<p>{% trans "Check weather prediction" %}</p>
+<a href="/ai/weather/" class="btn btn-success">{% trans "Check Weather" %}</a>
+</div>
+</div>
+
+<!-- Disease Detection -->
+<div class="col-md-4">
+<div class="card p-4 shadow">
+<h4>🦠 {% trans "Disease Detection" %}</h4>
+<p>{% trans "Detect plant disease" %}</p>
+<a href="/ai/disease/" class="btn btn-success">{% trans "Detect" %}</a>
+</div>
+</div>
+
+<!-- Soil Detection -->
+<div class="col-md-4">
+<div class="card p-4 shadow">
+<h4>🌍 {% trans "Soil Detection" %}</h4>
+<p>{% trans "Check soil quality" %}</p>
+<a href="/ai/soil/" class="btn btn-success">{% trans "Check Soil" %}</a>
+</div>
+</div>
+
+<!-- Yield Prediction -->
+<div class="col-md-4">
+<div class="card p-4 shadow">
+<h4>📊 {% trans "Yield Prediction" %}</h4>
+<p>{% trans "Predict crop yield" %}</p>
+<a href="/ai/yield/" class="btn btn-success">{% trans "Predict" %}</a>
+</div>
+</div>
+
+<!-- Profile -->
+<div class="col-md-4">
+<div class="card p-4 shadow">
+<h4>👨‍🌾 {% trans "Profile" %}</h4>
+<p>{% trans "Manage farmer profile" %}</p>
+<a href="/users/profile/" class="btn btn-success">{% trans "Profile" %}</a>
+</div>
+</div>
+
+<!-- Admin -->
+<div class="col-md-4">
+<div class="card p-4 shadow">
+<h4>⚙️ {% trans "Admin Panel" %}</h4>
+<p>{% trans "Admin dashboard" %}</p>
+<a href="/users/admin-dashboard/" class="btn btn-success">{% trans "Admin" %}</a>
+</div>
+</div>
+
+</div>
+
+{% endblock %}

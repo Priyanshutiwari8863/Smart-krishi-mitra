@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>🌾 AI Crop Recommendation</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<label>Soil Type</label>
+<select name="soil" class="form-control">
+
+<option value="">Select Soil</option>
+
+<option value="Clay">Clay</option>
+<option value="Loamy">Loamy</option>
+<option value="Black">Black</option>
+<option value="Sandy">Sandy</option>
+
+</select>
+
+<br>
+
+<label>Season</label>
+<select name="season" class="form-control">
+
+<option value="">Select Season</option>
+
+<option value="Kharif">Kharif</option>
+<option value="Rabi">Rabi</option>
+<option value="Zaid">Zaid</option>
+
+</select>
+
+<br>
+
+<button type="submit" class="btn btn-success">
+Recommend Crop
+</button>
+
+</form>
+
+<br>
+
+{% if crop %}
+
+<div class="card p-3">
+<h3>Recommended Crop</h3>
+<p>{{ crop.name }}</p>
+</div>
+
+{% endif %}
+
+{% endblock %}

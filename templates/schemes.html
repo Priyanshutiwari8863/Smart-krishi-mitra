@@ -1,0 +1,15 @@
+<h2>🏛 Government Schemes</h2>
+
+{% for s in schemes %}
+
+<div class="card" style="padding:15px;margin:10px;">
+
+<h4>{{ s.name }}</h4>
+
+<a href="{{ s.link }}" target="_blank">
+View Scheme
+</a>
+
+</div>
+
+{% endfor %}

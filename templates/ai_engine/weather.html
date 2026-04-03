@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Smart Krishi Mitra Weather</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<style>
+
+body{
+background:#f5f7fb;
+font-family:'Segoe UI',sans-serif;
+}
+
+.weather-container{
+max-width:1200px;
+margin:40px auto;
+}
+
+.header{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+margin-bottom:20px;
+}
+
+.card-box{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+margin-bottom:20px;
+}
+
+.weather-card{
+background:white;
+padding:30px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+text-align:center;
+}
+
+.temp{
+font-size:60px;
+font-weight:600;
+}
+
+.info-card{
+background:#f8f9fc;
+padding:15px;
+border-radius:12px;
+text-align:center;
+}
+
+.forecast-card{
+background:white;
+padding:20px;
+border-radius:15px;
+box-shadow:0 4px 15px rgba(0,0,0,0.08);
+margin-top:20px;
+}
+
+.forecast-box{
+background:#f8f9fc;
+padding:15px;
+border-radius:12px;
+text-align:center;
+}
+
+.weather-icon{
+width:70px;
+}
+
+.time-box{
+font-size:14px;
+color:#666;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="weather-container">
+
+<!-- Header -->
+<div class="header">
+<h4>🌦 Smart Krishi Mitra Weather</h4>
+</div>
+
+<div class="row">
+
+<!-- Left Section -->
+<div class="col-md-4">
+
+<!-- Search -->
+<div class="card-box">
+
+<form method="POST">
+{% csrf_token %}
+
+<input type="text" name="city" class="form-control mb-3" placeholder="Enter City">
+
+<button class="btn btn-primary w-100">
+Check Weather
+</button>
+
+</form>
+
+</div>
+
+
+<!-- Rain Alert -->
+{% if rain_alert %}
+
+<div class="card-box">
+
+<h6>🌧 Rain Alert</h6>
+<p>{{ rain_alert }}</p>
+
+<hr>
+
+<h6>🌾 Farming Advice</h6>
+<p>{{ farming_advice }}</p>
+
+</div>
+
+{% endif %}
+
+
+<!-- Rain Percentage -->
+{% if rain_today %}
+
+<div class="card-box">
+
+<h6>📊 Rain Percentage</h6>
+
+<p>Today: {{ rain_today }}%</p>
+
+{% for day in rain_week %}
+<small>{{ day.date }} - {{ day.rain }}%</small><br>
+{% endfor %}
+
+</div>
+
+{% endif %}
+
+</div>
+
+
+<!-- Right Section -->
+<div class="col-md-8">
+
+{% if weather %}
+
+<div class="weather-card">
+
+<img src="https:{{ weather.icon }}" class="weather-icon">
+
+<h5>📍 {{ weather.city }}</h5>
+
+<div class="time-box">
+⏰ {{ weather.time }}
+</div>
+
+<div class="temp">
+{{ weather.temperature }}°C
+</div>
+
+<p>{{ weather.description }}</p>
+
+<div class="row mt-4">
+
+<div class="col-md-3">
+<div class="info-card">
+🌡
+<h6>{{ weather.feels }}°C</h6>
+<small>Feels Like</small>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="info-card">
+💧
+<h6>{{ weather.humidity }}%</h6>
+<small>Humidity</small>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="info-card">
+🌬
+<h6>{{ weather.wind }} km/h</h6>
+<small>Wind</small>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="info-card">
+🌅
+<h6>{{ weather.sunrise }}</h6>
+<small>Sunrise</small>
+</div>
+</div>
+
+</div>
+
+<div class="row mt-3">
+
+<div class="col-md-12">
+<div class="info-card">
+🌇
+<h6>{{ weather.sunset }}</h6>
+<small>Sunset</small>
+</div>
+</div>
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</div>
+
+
+<!-- Forecast -->
+{% if forecast %}
+
+<div class="forecast-card">
+
+<h5 class="mb-3">📅 7 Day Forecast</h5>
+
+<div class="row">
+
+{% for day in forecast %}
+
+<div class="col-md-2 col-6 mb-3">
+
+<div class="forecast-box">
+
+<p>{{ day.date }}</p>
+
+<img src="https:{{ day.day.condition.icon }}">
+
+<p>{{ day.day.avgtemp_c }}°C</p>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+{% endif %}
+
+</div>
+
+</body>
+</html>

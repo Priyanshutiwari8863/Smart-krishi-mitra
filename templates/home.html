@@ -1,0 +1,165 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+.hero-section{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
+background-size:cover;
+background-position:center;
+border-radius:15px;
+color:white;
+}
+
+.glass-card{
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(10px);
+border-radius:20px;
+padding:50px;
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+}
+
+.feature-card{
+transition:0.3s;
+border-radius:15px;
+}
+
+.feature-card:hover{
+transform: translateY(-8px);
+}
+
+.footer{
+background:#198754;
+color:white;
+padding:20px;
+text-align:center;
+margin-top:40px;
+border-radius:10px;
+}
+
+</style>
+
+<!-- Hero Section -->
+
+<div class="hero-section mb-5">
+
+<div class="glass-card">
+
+<h1 class="mb-3">🌾 Smart Krishi Mitra</h1>
+
+<p class="mb-4">
+AI Powered Agriculture Assistant for Smart Farming
+</p>
+
+<a href="/users/login/" class="btn btn-success btn-lg me-3">
+Login
+</a>
+
+<a href="/users/register/" class="btn btn-light btn-lg">
+Register
+</a>
+
+</div>
+
+</div>
+
+
+<!-- Features Section -->
+
+<h2 class="text-center mb-4">🚀 Features</h2>
+
+<div class="row g-4">
+
+<div class="col-md-4">
+<div class="card p-4 shadow feature-card text-center">
+<h4>🤖 AI Recommendation</h4>
+<p>Get smart crop suggestions using AI</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4 shadow feature-card text-center">
+<h4>🌦 Weather Prediction</h4>
+<p>Check weather before farming</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4 shadow feature-card text-center">
+<h4>🦠 Disease Detection</h4>
+<p>Detect plant disease using AI</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4 shadow feature-card text-center">
+<h4>🌍 Soil Detection</h4>
+<p>Analyze soil quality</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4 shadow feature-card text-center">
+<h4>📊 Yield Prediction</h4>
+<p>Predict crop yield</p>
+</div>
+</div>
+
+<div class="col-md-4">
+<div class="card p-4 shadow feature-card text-center">
+<h4>💬 AI Chatbot</h4>
+<p>Ask farming questions anytime</p>
+</div>
+</div>
+
+</div>
+
+
+<!-- About Section -->
+
+<div class="mt-5 text-center">
+
+<h2>🌱 About Smart Krishi Mitra</h2>
+
+<p class="mt-3">
+Smart Krishi Mitra is an AI-powered agriculture platform designed to help farmers
+make better decisions using weather data, AI prediction, disease detection,
+and smart recommendations.
+</p>
+
+</div>
+
+
+<!-- CTA Section -->
+
+<div class="card p-5 text-center shadow mt-5">
+
+<h2>🚀 Start Smart Farming Today</h2>
+
+<p>Join Smart Krishi Mitra and grow your farming with AI</p>
+
+<a href="/users/register/" class="btn btn-success btn-lg">
+Get Started
+</a>
+
+</div>
+
+
+<!-- Footer -->
+
+<div class="footer mt-5">
+
+<p>🌾 Smart Krishi Mitra | AI Agriculture Platform</p>
+
+<p>Developed by Priyanshu Tiwari</p>
+
+</div>
+
+{% endblock %}

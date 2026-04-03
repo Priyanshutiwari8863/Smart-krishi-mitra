@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+.crop-card {
+border-radius: 15px;
+overflow: hidden;
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+.table thead {
+background: linear-gradient(45deg, #28a745, #20c997);
+color: white;
+}
+
+.table tbody tr:hover {
+background-color: #f5f5f5;
+transition: 0.3s;
+}
+
+.title {
+font-weight: bold;
+color: #28a745;
+margin-bottom: 20px;
+}
+
+</style>
+
+<div class="container mt-4">
+
+<h2 class="title">🌾 Smart Crop List</h2>
+
+<div class="card crop-card">
+
+<table class="table table-hover table-bordered">
+
+<thead>
+<tr>
+<th>🌱 Name</th>
+<th>🌍 Soil</th>
+<th>📅 Season</th>
+<th>💧 Water</th>
+</tr>
+</thead>
+
+<tbody>
+
+{% for crop in crops %}
+
+<tr>
+<td><strong>{{ crop.name }}</strong></td>
+<td>{{ crop.soil_type }}</td>
+<td>{{ crop.season }}</td>
+<td>
+
+{% if crop.water == "High" %}
+<span class="badge bg-danger">High</span>
+
+{% elif crop.water == "Medium" %}
+<span class="badge bg-warning text-dark">Medium</span>
+
+{% else %}
+<span class="badge bg-success">Low</span>
+
+{% endif %}
+
+</td>
+</tr>
+
+{% endfor %}
+
+</tbody>
+
+</table>
+
+</div>
+
+</div>
+
+{% endblock %}

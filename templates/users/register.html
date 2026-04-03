@@ -1,0 +1,79 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+.register-section{
+height:90vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
+background-size:cover;
+background-position:center;
+border-radius:15px;
+}
+
+.glass-card{
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(12px);
+border-radius:20px;
+padding:40px;
+color:white;
+width:450px;
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+}
+
+</style>
+
+<div class="register-section">
+
+<div class="glass-card">
+
+<h3 class="text-center mb-4">🌾 Register</h3>
+
+<form method="POST">
+
+{% csrf_token %}
+
+{% if error %}
+<div class="alert alert-danger">
+{{ error }}
+</div>
+{% endif %}
+
+<div class="mb-3">
+<label>Name</label>
+<input type="text" name="name" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Email</label>
+<input type="email" name="email" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Password</label>
+<input type="password" name="password" class="form-control" required>
+</div>
+
+<button class="btn btn-success w-100">
+Register
+</button>
+
+<div class="text-center mt-3">
+<p>Already have account?</p>
+<a href="/users/login/" class="btn btn-light btn-sm">
+Login
+</a>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

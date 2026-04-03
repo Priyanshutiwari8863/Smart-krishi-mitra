@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<style>
+
+.login-section{
+height:85vh;
+display:flex;
+align-items:center;
+justify-content:center;
+background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+url('https://images.unsplash.com/photo-1500382017468-9049fed747ef');
+background-size:cover;
+background-position:center;
+border-radius:15px;
+}
+
+.glass-card{
+background: rgba(255,255,255,0.15);
+backdrop-filter: blur(12px);
+border-radius:20px;
+padding:40px;
+color:white;
+width:400px;
+box-shadow:0 8px 32px rgba(0,0,0,0.2);
+}
+
+</style>
+
+<div class="login-section">
+
+<div class="glass-card">
+
+<h3 class="text-center mb-4">🌾 Login</h3>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<div class="mb-3">
+<label>Email</label>
+<input type="email" name="email" class="form-control" required>
+</div>
+
+<div class="mb-3">
+<label>Password</label>
+<input type="password" name="password" class="form-control" required>
+</div>
+
+<button class="btn btn-success w-100">
+Login
+</button>
+
+<div class="text-center mt-3">
+<p>Don't have account?</p>
+<a href="/users/register/" class="btn btn-light btn-sm">
+Register
+</a>
+</div>
+
+</form>
+
+</div>
+
+</div>
+
+{% endblock %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>🦠 Disease Detected: {{ disease }}</h2>
+
+<h3>💊 Recommended Medicines</h3>
+
+<div class="row">
+
+{% for medicine in medicines %}
+
+<div class="col-md-4">
+
+<div class="card p-3 shadow mb-3">
+
+<h4>{{ medicine.name }}</h4>
+
+<p>{{ medicine.description }}</p>
+
+<p>Price: ₹{{ medicine.price }}</p>
+
+<p>Effectiveness: ⭐ {{ medicine.effectiveness }}</p>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

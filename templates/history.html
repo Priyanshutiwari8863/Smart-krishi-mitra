@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>🦠 Detection History</h2>
+
+<div class="row">
+
+{% for item in history %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow p-3">
+
+<img src="{{ item.image.url }}" class="img-fluid">
+
+<h5 class="mt-2">{{ item.disease }}</h5>
+
+<p>Date: {{ item.date }}</p>
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

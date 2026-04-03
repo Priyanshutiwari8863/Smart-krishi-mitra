@@ -1,0 +1,75 @@
+plant,disease_name,symptoms,solution
+General,Healthy,Plant is healthy,No treatment required
+Tomato,Early Blight,Brown spots on leaves,Use Mancozeb
+Tomato,Late Blight,Dark spots on leaves,Use Metalaxyl
+Tomato,Leaf Mold,Yellow spots,Use Fungicide
+Tomato,Septoria Leaf Spot,Small brown spots,Use Copper fungicide
+Tomato,Bacterial Spot,Water soaked spots,Use Copper spray
+Tomato,Tomato Mosaic Virus,Yellow mottling,Remove infected plants
+Tomato,Yellow Leaf Curl Virus,Leaf curling,Use resistant seeds
+Potato,Early Blight,Brown spots,Use Mancozeb
+Potato,Late Blight,Dark lesions,Use Metalaxyl
+Potato,Black Scurf,Black spots,Use fungicide
+Potato,Common Scab,Rough skin,Use proper irrigation
+Rice,Brown Spot,Brown lesions,Use Carbendazim
+Rice,Blast,White lesions,Use Tricyclazole
+Rice,Sheath Blight,Brown sheath,Use Validamycin
+Rice,Bacterial Leaf Blight,Yellowing leaves,Use Streptomycin
+Wheat,Leaf Rust,Orange powder,Use Propiconazole
+Wheat,Stem Rust,Brown pustules,Use fungicide
+Wheat,Stripe Rust,Yellow stripes,Use fungicide
+Wheat,Powdery Mildew,White powder,Use Sulfur spray
+Corn,Gray Leaf Spot,Gray lesions,Use fungicide
+Corn,Common Rust,Rust spots,Use fungicide
+Corn,Northern Leaf Blight,Long lesions,Use fungicide
+Corn,Southern Rust,Orange pustules,Use fungicide
+Apple,Apple Scab,Dark spots,Use Captan
+Apple,Black Rot,Rot spots,Use fungicide
+Apple,Cedar Apple Rust,Yellow spots,Use fungicide
+Apple,Powdery Mildew,White powder,Use Sulfur spray
+Grapes,Black Rot,Dark rot,Use fungicide
+Grapes,Downy Mildew,Yellow spots,Use Copper spray
+Grapes,Powdery Mildew,White powder,Use Sulfur spray
+Grapes,Esca,Leaf scorch,Remove infected vines
+Banana,Panama Disease,Yellow leaves,Use resistant variety
+Banana,Black Sigatoka,Black streaks,Use fungicide
+Banana,Bacterial Wilt,Leaf wilting,Remove infected plant
+Mango,Anthracnose,Black spots,Use fungicide
+Mango,Powdery Mildew,White powder,Use sulfur spray
+Mango,Bacterial Canker,Cracks on bark,Use copper spray
+Cotton,Bacterial Blight,Leaf spots,Use resistant seeds
+Cotton,Fusarium Wilt,Wilting,Use crop rotation
+Cotton,Leaf Curl Virus,Leaf curling,Use insecticide
+Soybean,Rust,Orange spots,Use fungicide
+Soybean,Leaf Spot,Brown spots,Use fungicide
+Soybean,Mosaic Virus,Yellow mosaic,Remove infected plants
+Peanut,Leaf Spot,Spots on leaves,Use fungicide
+Peanut,Rust,Rust spots,Use fungicide
+Peanut,Stem Rot,Stem decay,Use fungicide
+Chilli,Leaf Curl,Leaf curling,Use insecticide
+Chilli,Anthracnose,Dark spots,Use fungicide
+Chilli,Root Rot,Root decay,Use fungicide
+Cucumber,Downy Mildew,Yellow patches,Use fungicide
+Cucumber,Powdery Mildew,White powder,Use sulfur spray
+Cucumber,Mosaic Virus,Yellow mosaic,Remove infected plants
+Onion,Purple Blotch,Purple spots,Use fungicide
+Onion,Downy Mildew,Yellowing leaves,Use fungicide
+Onion,Stemphylium Blight,Leaf blight,Use fungicide
+Garlic,White Rot,White fungus,Use fungicide
+Garlic,Purple Blotch,Purple spots,Use fungicide
+Sugarcane,Red Rot,Red discoloration,Use resistant variety
+Sugarcane,Smuts,Black whip,Remove infected plant
+Sugarcane,Leaf Scald,White stripes,Use fungicide
+Tea,Blister Blight,Blisters on leaves,Use fungicide
+Tea,Red Rust,Rust spots,Use copper spray
+Coffee,Rust,Orange spots,Use fungicide
+Coffee,Leaf Spot,Brown spots,Use fungicide
+Orange,Citrus Canker,Leaf spots,Use copper spray
+Orange,Greening Disease,Yellow leaves,Remove infected plant
+Orange,Black Spot,Dark spots,Use fungicide
+Papaya,Ring Spot Virus,Yellow rings,Remove infected plants
+Papaya,Anthracnose,Black spots,Use fungicide
+Pomegranate,Bacterial Blight,Leaf spots,Use copper spray
+Pomegranate,Anthracnose,Dark lesions,Use fungicide
+Guava,Anthracnose,Leaf spots,Use fungicide
+Guava,Wilt,Plant wilting,Use fungicide

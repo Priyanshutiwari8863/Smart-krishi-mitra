@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+.card{
+border-radius:15px;
+}
+</style>
+
+<div class="row justify-content-center">
+
+<div class="col-md-8">
+
+<div class="card shadow-lg p-4">
+
+<div class="row">
+
+<!-- Profile Image -->
+<div class="col-md-4 text-center">
+
+{% if farmer.profile_pic %}
+<img src="{{ farmer.profile_pic.url }}" 
+class="img-fluid rounded-circle mb-3"
+style="width:150px;height:150px;object-fit:cover;">
+{% else %}
+<img src="https://cdn-icons-png.flaticon.com/512/149/149071.png"
+class="img-fluid rounded-circle mb-3"
+style="width:150px;height:150px;">
+{% endif %}
+
+<h4>{{ farmer.name }}</h4>
+
+</div>
+
+
+<!-- Profile Info -->
+<div class="col-md-8">
+
+<h3 class="mb-3">👨‍🌾 Farmer Profile</h3>
+
+<div class="row">
+
+<div class="col-md-6">
+<p><strong>Email:</strong> {{ farmer.email }}</p>
+</div>
+
+<div class="col-md-6">
+<p><strong>Phone:</strong> {{ farmer.phone }}</p>
+</div>
+
+<div class="col-md-6">
+<p><strong>Location:</strong> {{ farmer.location }}</p>
+</div>
+
+<div class="col-md-6">
+<p><strong>Soil Type:</strong> {{ farmer.soil_type }}</p>
+</div>
+
+</div>
+
+<a href="/users/edit-profile/" class="btn btn-success mt-3">
+Edit Profile
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+<hr>
+
+<h4>📊 Farmer Stats</h4>
+
+<div class="row">
+
+<div class="col-md-4">
+<div class="card p-3 text-center">
+<h5>🌱 Crops</h5>
+<h3>{{ crops }}</h3>
+</div>
+</div>
+
+{% endblock %}

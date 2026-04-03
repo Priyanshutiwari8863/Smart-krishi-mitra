@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="row justify-content-center">
+
+<div class="col-md-8">
+
+<div class="card shadow-lg p-4">
+
+<h3 class="mb-4">✏️ Edit Profile</h3>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<div class="row">
+
+<div class="col-md-6 mb-3">
+<label>Name</label>
+<input type="text" name="name" class="form-control" value="{{ farmer.name }}">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Email</label>
+<input type="email" name="email" class="form-control" value="{{ farmer.email }}">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Phone</label>
+<input type="text" name="phone" class="form-control" value="{{ farmer.phone }}">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Location</label>
+<input type="text" name="location" class="form-control" value="{{ farmer.location }}">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Soil Type</label>
+<input type="text" name="soil_type" class="form-control" value="{{ farmer.soil_type }}">
+</div>
+
+<div class="col-md-6 mb-3">
+<label>Profile Picture</label>
+<input type="file" name="profile_pic" class="form-control">
+</div>
+
+</div>
+
+<button class="btn btn-success">
+Update Profile
+</button>
+
+</form>
+
+</div>
+
+</div>
+
+</div>
+
+{% endblock %}

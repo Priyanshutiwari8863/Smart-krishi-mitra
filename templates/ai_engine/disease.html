@@ -1,0 +1,90 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>🌿 Disease Detection</h2>
+
+<div class="card p-4 shadow">
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<label>Upload Plant Image</label>
+
+<input type="file" name="image" class="form-control" required>
+
+<button type="submit" class="btn btn-success mt-3">
+Detect Disease
+</button>
+
+</form>
+
+</div>
+
+<!-- Error Message -->
+{% if error %}
+<div class="alert alert-danger mt-3">
+{{ error }}
+</div>
+{% endif %}
+
+<!-- Detected Disease -->
+{% if detected %}
+<div class="card mt-3 p-3 shadow">
+
+<h4>🌿 Detected Disease</h4>
+
+<h5 class="text-danger">{{ detected }}</h5>
+
+</div>
+{% endif %}
+
+<!-- Disease Details -->
+{% if disease %}
+<div class="card mt-3 p-3 shadow">
+
+<h4>🦠 Disease Details</h4>
+
+<p><strong>Name:</strong> {{ disease.disease_name }}</p>
+<p><strong>Symptoms:</strong> {{ disease.symptoms }}</p>
+<p><strong>Solution:</strong> {{ disease.solution }}</p>
+
+</div>
+{% endif %}
+
+<!-- Medicines -->
+{% if medicines %}
+<div class="card mt-3 p-3 shadow">
+
+<h4>💊 Recommended Medicines</h4>
+
+<ul>
+{% for medicine in medicines %}
+<li>
+<strong>{{ medicine.name }}</strong> - {{ medicine.usage }}
+</li>
+{% endfor %}
+</ul>
+
+</div>
+{% endif %}
+
+<!-- Products -->
+{% if products %}
+<div class="card mt-3 p-3 shadow">
+
+<h4>🛒 Products</h4>
+
+<ul>
+{% for product in products %}
+<li>
+{{ product.name }} - ₹{{ product.price }}
+</li>
+{% endfor %}
+</ul>
+
+</div>
+{% endif %}
+
+{% endblock %}

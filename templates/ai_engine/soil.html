@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>🌱 Soil Detection</h2>
+
+<form method="POST" enctype="multipart/form-data">
+
+{% csrf_token %}
+
+<input type="file" name="image"><br><br>
+
+<button class="btn btn-success">Detect Soil</button>
+
+</form>
+
+{% if result %}
+
+<div class="alert alert-success mt-3">
+<h3>Soil Type: {{ result }}</h3>
+</div>
+
+{% endif %}
+
+{% endblock %}

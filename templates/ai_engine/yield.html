@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>🌾 Crop Yield Prediction</h2>
+
+<form method="POST">
+
+{% csrf_token %}
+
+<label>Soil Type</label>
+<input class="form-control" name="soil"><br>
+
+<label>Rainfall</label>
+<input class="form-control" name="rainfall"><br>
+
+<label>Temperature</label>
+<input class="form-control" name="temperature"><br>
+
+<button class="btn btn-success">Predict Yield</button>
+
+</form>
+
+{% if result %}
+
+<div class="alert alert-success mt-3">
+<h3>Predicted Yield: {{ result }}</h3>
+</div>
+
+{% endif %}
+
+{% endblock %}
