@@ -1,4 +1,8 @@
-import speech_recognition as sr
+try:
+    import speech_recognition as sr
+    from gtts import gTTS
+except:
+    pass
 from gtts import gTTS
 import os
 
